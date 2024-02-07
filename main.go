@@ -12,7 +12,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; utf-8")
-	fmt.Fprintf(w, "<h1>Hello, World1!</h1>")
+	fmt.Fprintf(w, "<h1>Hello, World11!</h1>")
 }
 
 func pathHandler(w http.ResponseWriter, r *http.Request) {
@@ -23,6 +23,7 @@ func pathHandler(w http.ResponseWriter, r *http.Request) {
 		contactHandler(w, r)
 	default:
 		w.WriteHeader(http.StatusNotFound)
+		http.Error(w, "Not Found", 404)
 	}
 }
 
