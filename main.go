@@ -28,7 +28,6 @@ func pathHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", pathHandler)
 	fmt.Println("Starting server...")
-	http.ListenAndServe("localhost:3000", nil)
+	http.ListenAndServe("localhost:3000", http.HandlerFunc(pathHandler))
 }
