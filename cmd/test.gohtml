@@ -1,0 +1,9 @@
+Name: {{ .Name }}
+Address: {{ range $key, $value := .Address }} {{ $key }}: {{ $value }}
+{{ end }}
+
+{{ if .Name }}
+{{ .Name }} is a person.
+{{ else }}
+{{ .Name }} is not a person.
+{{ end }}
